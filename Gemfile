@@ -6,6 +6,7 @@ gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 
+gem 'paperclip', '~> 4.3'
 gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -36,7 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry'
 end
 
 group :development do

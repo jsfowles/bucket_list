@@ -30,11 +30,22 @@ class ItemsController < ApplicationController
   def update
   	if @item.update(items_params)
   		flash[:success] = "Item updated successfully"
-  		redirect_to list_path(@list)
+  		redirect_to list_item_path(@list, @item)
   	else
   		flash[:danger] = @item.errors.full_messages.join('<br>').html_safe
   		render :edit
   	end
+  end
+
+  def remove_image
+    @item.image = nil
+    if @item.save
+      flash[:success] = 'Image removed'
+      redirect_to list_item_path(@list, @item)
+    else
+      flash[:danger] = @item.errors.full_messages.join('<br>').html_safe
+      redirect_to list_item_path(@list, @item)
+    end
   end
 
   def destroy
@@ -46,7 +57,7 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-  	params.require(:item).permit(:title, :complete_by, :completed)
+  	params.require(:item).permit(:title, :complete_by, :completed, :image)
   end
 
   def list_instance

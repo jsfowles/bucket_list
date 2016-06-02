@@ -1,6 +1,18 @@
 <h2><%= @item.title %></h2>
 <% if @item.completed %>
 	You completed this on <%= @item.completed_date %>!
+	<% if @item.image_file_name %>
+		<br>
+		<%= image_tag @item.image.url, class: 'image' %>
+		<%= button_to 'Remove Image', remove_image_path(id: @item.id, list_id: @list.id) %>
+	<% else %>
+		<h3>Uploade Proof!</h3>
+		<%= form_for [@list, @item], html: { multipart: true } do |f| %>
+		  <%= f.file_field :image %>
+		  <br>
+		  <%= f.submit 'Upload'%>
+		<% end %>
+	<% end %>
 <% else %>
 	Goal to complete by: <%= @item.complete_by %>
 	<%= render 'mark_complete', item: @item %>
@@ -9,3 +21,4 @@
 <hr>
 
 <%= link_to 'Delete this item', list_item_path(@list, @item), method: :delete %>
+This item belongs to <%= link_to @list.name, list_path(@list) %>

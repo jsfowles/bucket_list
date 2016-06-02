@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :lists do
     resources :items
   end
+
+  #POST
+
+  post '/remove_image', to: 'items#remove_image'
 end
