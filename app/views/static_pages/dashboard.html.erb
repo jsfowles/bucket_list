@@ -1,0 +1,14 @@
+<h1>Your Bucket Lists</h1>
+
+<% if current_user.lists.any? %>
+	<% current_user.lists.each do |list| %>
+		<%= link_to list.name, list_path(list) %>
+		<br>
+	<% end %>
+<% else %>
+	<h2>You don't have any lists, <%= link_to 'Add one!', new_list_path %></h2>
+<% end %>
+
+<hr>
+
+<%= link_to 'Create new Bucket List', new_list_path %>

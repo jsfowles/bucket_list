@@ -1,0 +1,14 @@
+<%= form_for [@list, @item] do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :complete_by, 'Set a date you want to complete this by' %>
+	<%= f.date_select :complete_by %>
+
+	<% if @item.id %>
+		<%= f.check_box :completed %>
+		<%= f.label :completed %>
+	<% end %>
+
+	<%= f.submit %>
+<% end %>

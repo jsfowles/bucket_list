@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+	<%= link_to 'My Dashboard', root_path %>
+</header>
+<% if flash.any? %>
+	<% flash.each do |key, value| %>
+		<div class='flash <%= key %>'><%= value %></div>
+	<% end %>
+<% end %>
 <%= yield %>
 
 </body>
