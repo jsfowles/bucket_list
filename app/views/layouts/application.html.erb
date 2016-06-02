@@ -7,13 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-	<%= link_to 'My Dashboard', root_path %>
-	<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-</header>
+<% if current_user %>
+	<header>
+		<%= link_to 'My Dashboard', root_path %>
+		<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+	</header>
+<% end %>
 <% if flash.any? %>
 	<% flash.each do |key, value| %>
-		<div class='flash <%= key %>'><%= value %></div>
+		<div class='alert alert-<%= key %>'><%= value %></div>
 	<% end %>
 <% end %>
 <%= yield %>

@@ -5,3 +5,31 @@
 .success {
 	background-color: green;
 }
+
+body {
+	background-opacity: 0.5;
+	background: url(background.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.login-page {
+	background-color: rgba(255,255,255,0.4);
+	margin-top: 100px;
+	padding: 20px 20px 20px 20px;
+}
+
+.log-in {
+	padding-left: 0;
+	margin-top: 20px;
+}
+
+.no-right-padding {
+	padding-right: 0 !important;
+}
+
+.alert-success {
+	// background-color: ;
+}
