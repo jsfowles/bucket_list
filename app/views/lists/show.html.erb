@@ -1,26 +1,32 @@
-<h1><%= @list.name %></h1>
-<%= @list.description %>
+<div class='lists-page col-md-5 col-md-offset-4'>
+	<h1><%= @list.name %></h1>
+	<%= @list.description %>
 
-<br>
+	<br>
 
-<% @list.items.each do |item| %>
-	<div>
-		<%= link_to item.title, list_item_path(@list, item) %>
-		<br>
-		Complete by goal: <%= item.complete_by %>
-		<% if item.completed %>
-			<h3>You completed this on <%= item.completed_date %>!</h3>
-		<% else %>
-			<div>
-				<%= render 'items/mark_complete', item: item %>
-			</div>
-		<% end %>
-	</div>
-<% end %>
-
+	<% @list.items.each do |item| %>
+		<div>
+			<%= link_to item.title, list_item_path(@list, item) %>
+			<br>
+			Complete by goal: <%= item.complete_by %>
+			<% if item.completed %>
+				<h3>You completed this on <%= item.completed_date %>!</h3>
+			<% else %>
+				<div>
+					<%= render 'items/mark_complete', item: item %>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
 
 <hr>
+<div>
+	<button type="button" class="btn btn-primary">
+		<%= link_to 'Edit this list', edit_list_path(@list) %>
+	</button>
+	<button type="button" class="btn btn-primary">
 
-<%= link_to 'Edit this list', edit_list_path(@list) %>
-<%= link_to 'Delete this list', list_path(@list), method: :delete %>
-<%= link_to 'Add an item for this list', new_list_item_path(@list) %>
+		<%= link_to 'Delete this list', list_path(@list), method: :delete %>
+	<button type="button" class="btn btn-primary">
+		<%= link_to 'Add an item for this list', new_list_item_path(@list) %>
