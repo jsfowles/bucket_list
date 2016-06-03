@@ -12,7 +12,7 @@
 			<%= form_for [@list, @item], html: { multipart: true } do |f| %>
 			  <%= f.file_field :image %>
 			  <br>
-			  <%= f.submit 'Upload'%>
+			  <%= f.submit 'Upload', class: 'btn' %>
 			<% end %>
 		<% end %>
 	<% else %>

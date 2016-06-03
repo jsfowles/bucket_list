@@ -1,6 +1,8 @@
 class Item < ActiveRecord::Base
   belongs_to :list
 
+  validates_presence_of :title
+
   before_update :set_completed_date
 
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }

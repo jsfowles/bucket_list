@@ -14,6 +14,10 @@ html {
 	background-color: rgba(0,128,0,0.3);
 }
 
+.alert-danger {
+	background-color: rgba(255,0,0,0.3)
+}
+
 body {
 background-opacity: 0.5;
 background: url(background.jpg) no-repeat center center fixed;
@@ -69,7 +73,9 @@ margin-bottom: 50px;
 .button-align{
 	display: inline-block;
 	margin: 0 auto;
-	margin-left: 35px;
+	.btn {
+		margin-right: 8px;
+	}
 }
 
 .button-align-items {
