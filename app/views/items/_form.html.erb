@@ -1,5 +1,7 @@
+
+
 <%= form_for [@list, @item] do |f| %>
-	<%= f.label :title %>
+	<%= f.label :title, ' '%>
 	<%= f.text_field :title %>
 
 	<%= f.label :complete_by, 'Set a date you want to complete this by' %>

@@ -1,5 +1,9 @@
 <div class='login-page col-md-6 col-md-offset-3'>
-  <h2 class='text-center'>Welcome to Bucket List</h2>
+ <div class= 'col-md-7 col-md-offset-4 image-logo'>
+   <%= image_tag('bl_logo.png')%>
+ </div>
+ <br>
+<h2 class='text-center'>Welcome to Bucket List</h2>
 
   <div class='log-in no-right-padding'>
     <div class='login-form center'>
@@ -22,7 +26,7 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.submit "Log in", class: 'btn btn-primary'%>    
+          <%= f.submit "Log in", class: 'btn btn-primary'%>
         </div>
 
         <br>
