@@ -36,15 +36,68 @@ background-size: cover;
 }
 
 .lists-dashboard{
-	font-size: 20px;
+	font-size: 25px;
 	text-transform: capitalize;
 	text-align: center;
 }
 
 .lists-page {
 	background-color: rgba(255,255,255,0.4);
-	margin-top: 75px;
+	margin-top: 0px;
 	padding: 20px 20px 20px 20px;
 	border-radius: 4px;
 	width: 500px;
+}
+
+.link-buttons a {
+	color: white !important;
+}
+
+.button-align{
+	display: inline-block;
+	margin: 0 auto;
+	margin-left: 35px;
+}
+
+.button-align-items {
+	margin-left: 60px;
+}
+
+.hr-line{
+	border-color: #337ab7;
+}
+
+.list-p {
+	font-size: 40px;
+}
+
+.completed {
+	font-size: 18px;
+	color: red;
+}
+
+.complete_by {
+	font-size: 18px;
+}
+
+.image {
+	width: 400px;
+	margin-left: 30px;
+}
+
+.navbar.navbar-inverse {
+	background-color: rgba(255,255,255,0.4)!important;
+	color: white;
+	margin-top: 100px;
+}
+
+.image-logo {
+}
+
+.navbar-logo {
+	width:800px;
+}
+
+.navbar-logo img {
+	width:80px;
 }

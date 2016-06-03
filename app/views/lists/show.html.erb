@@ -1,16 +1,17 @@
 <div class='lists-page col-md-5 col-md-offset-4'>
-	<h1><%= @list.name %></h1>
-	<%= @list.description %>
+	<h3>Your Bucket List name is: <%= @list.name %></h3>
+	<hr class='hr-line'>
+	<h3>Goal: <%= @list.description %></h3>
+	<!-- <h3><%= @list.description %></h3> -->
 
 	<br>
 
 	<% @list.items.each do |item| %>
 		<div>
-			<%= link_to item.title, list_item_path(@list, item) %>
-			<br>
-			Complete by goal: <%= item.complete_by %>
+			<p class='list-p'><%= link_to item.title, list_item_path(@list, item) %></p>
+			<p class='complete_by'> Complete by goal: <%= item.complete_by %></p>
 			<% if item.completed %>
-				<h3>You completed this on <%= item.completed_date %>!</h3>
+				<p class='completed'>You completed this on <%= item.completed_date %>!</p>
 			<% else %>
 				<div>
 					<%= render 'items/mark_complete', item: item %>
@@ -18,15 +19,18 @@
 			<% end %>
 		</div>
 	<% end %>
+
+
+<hr class='hr-line'>
+	<div class='button-align'>
+		<button class="btn btn-primary link-buttons">
+			<%= link_to 'Edit this list', edit_list_path(@list) %>
+		</button>
+		<button class="btn btn-primary link-buttons">
+			<%= link_to 'Delete this list', list_path(@list), method: :delete %>
+		</button>
+		<button class="btn btn-primary link-buttons">
+			<%= link_to 'Add an item for this list', new_list_item_path(@list) %>
+		</button>
+	</div>
 </div>
-
-<hr>
-<div>
-	<button type="button" class="btn btn-primary">
-		<%= link_to 'Edit this list', edit_list_path(@list) %>
-	</button>
-	<button type="button" class="btn btn-primary">
-
-		<%= link_to 'Delete this list', list_path(@list), method: :delete %>
-	<button type="button" class="btn btn-primary">
-		<%= link_to 'Add an item for this list', new_list_item_path(@list) %>
