@@ -18,12 +18,10 @@ ActiveRecord::Schema.define(version: 20160602204737) do
 
   create_table "items", force: :cascade do |t|
     t.string   "title"
-    t.date     "complete_by"
-    t.boolean  "completed",          default: false
-    t.date     "completed_date"
+    t.boolean  "completed"
     t.integer  "list_id"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -34,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160602204737) do
 
   create_table "lists", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
+    t.string   "description"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
