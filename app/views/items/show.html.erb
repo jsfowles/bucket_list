@@ -6,7 +6,7 @@
 		<% if @item.image_file_name %>
 			<br>
 			<div class='image-size'><%= image_tag @item.image.url, class: 'image' %></div>
-			<p><%= button_to 'Remove Image', remove_image_path(id: @item.id, list_id: @list.id) %></p>
+			<p><%= button_to 'Remove Image', remove_image_path(id: @item.id, list_id: @list.id), class: 'btn'%></p>
 		<% else %>
 			<h3>Upload Proof!</h3>
 			<%= form_for [@list, @item], html: { multipart: true } do |f| %>

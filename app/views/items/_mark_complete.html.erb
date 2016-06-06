@@ -1,4 +1,6 @@
-<%= form_for [@list, item] do |f| %>
-	<%= f.hidden_field :completed, value: true %>
-	<%= f.submit 'Mark as completed', class: 'btn' %>
-<% end %>
+<div class='small-bottom-margin'>
+	<%= form_for [@list, item] do |f| %>
+		<%= f.hidden_field :completed, value: true %>
+		<%= f.submit 'Mark as completed', class: 'btn' %>
+	<% end %>
+</div>
