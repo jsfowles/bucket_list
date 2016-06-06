@@ -8,4 +8,8 @@ module ItemsHelper
 		"#{item.completed_date.strftime("%B")} #{item.completed_date.day}, #{item.completed_date.year}"
 	end
 
+	def time_remaining(item)
+		(item.complete_by - Date.today).to_i
+	end
+
 end

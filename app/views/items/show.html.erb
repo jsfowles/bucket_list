@@ -1,11 +1,12 @@
-<div class='lists-page col-md-5 col-md-offset-4'>
+<div class='lists-page col-md-4 col-md-offset-4'>
 	<p>This item belongs to <%= link_to @list.name, list_path(@list) %><p/>
 	<h2><%= @item.title %></h2>
 	<% if @item.completed %>
 		You completed this on <%= display_completed(@item) %>!
 		<% if @item.image_file_name %>
 			<br>
-			<div class='image-size'><%= image_tag @item.image.url, class: 'image' %></div>
+			<div class='image-size col-md-10 col-md-offset-1 col-xs-8 col-xs-offset-2'><%= image_tag @item.image.url, class: 'image' %></div>
+			<div class='clearfix'></div>
 			<p><%= button_to 'Remove Image', remove_image_path(id: @item.id, list_id: @list.id), class: 'btn'%></p>
 		<% else %>
 			<h3>Upload Proof!</h3>
@@ -17,6 +18,8 @@
 		<% end %>
 	<% else %>
 		Goal to complete by: <%= display_date(@item) %>
+		<br>
+		You have <%= time_remaining(@item) %> days left to complete this!
 		<%= render 'mark_complete', item: @item %>
 	<% end %>
 
