@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.item {
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
 .image {
 	max-width: 400px;
 }

@@ -7,11 +7,11 @@
 	<br>
 
 	<% @list.items.each do |item| %>
-		<div>
+		<div class='item'>
 			<p class='list-p'><%= link_to item.title, list_item_path(@list, item) %></p>
-			<p class='complete_by'> Complete by goal: <%= item.complete_by %></p>
+			<p class='complete_by'> Complete by goal: <%= display_date(item) %></p>
 			<% if item.completed %>
-				<p class='completed'>You completed this on <%= item.completed_date %>!</p>
+				<p class='completed'>You completed this on <%= display_completed(item) %>!</p>
 			<% else %>
 				<div>
 					<%= render 'items/mark_complete', item: item %>

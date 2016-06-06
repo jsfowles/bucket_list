@@ -2,7 +2,7 @@
 	<p>This item belongs to <%= link_to @list.name, list_path(@list) %><p/>
 	<h2><%= @item.title %></h2>
 	<% if @item.completed %>
-		You completed this on <%= @item.completed_date %>!
+		You completed this on <%= display_completed(@item) %>!
 		<% if @item.image_file_name %>
 			<br>
 			<div class='image-size'><%= image_tag @item.image.url, class: 'image' %></div>
@@ -16,12 +16,12 @@
 			<% end %>
 		<% end %>
 	<% else %>
-		Goal to complete by: <%= @item.complete_by %>
+		Goal to complete by: <%= display_date(@item) %>
 		<%= render 'mark_complete', item: @item %>
 	<% end %>
 
 	<hr class='hr-line'>
-		<div class='button-align-items'>
+		<div class='button-align'>
 			<button class="btn btn-primary link-buttons">
 				<%= link_to 'Delete this item', list_item_path(@list, @item), method: :delete %>
 			</button>
