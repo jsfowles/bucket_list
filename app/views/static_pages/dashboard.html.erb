@@ -1,7 +1,7 @@
 <div class='login-page col-md-6 col-md-offset-3'>
 	<h1 class='text-center bucket-list-main'>Your Bucket Lists</h1>
 
-	<div class='log-in no-right-padding'>
+	<div class='log-in no-right-padding box-shadow'>
 	<% if current_user.lists.any? %>
 		<% current_user.lists.each do |list| %>
 		<div class='lists-dashboard'>

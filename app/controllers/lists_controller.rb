@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   end
 
   def show
+		commontator_thread_show(@list)
   end
 
   def new
