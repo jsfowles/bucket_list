@@ -5,10 +5,10 @@
 			<%= f.label :title %>
 			<%= f.text_field :title, class: 'form-control' %>
 		</div>
-		
+
 		<div class='form-group'>
 			<%= f.label :complete_by, 'Set a date you want to complete this by' %>
-			<%= f.date_select :complete_by, class: 'form-control' %>
+			<%= f.date_select :complete_by, order: [:month, :day, :year], class: 'form-control' %>
 		</div>
 
 		<% if @item.id %>
@@ -17,7 +17,7 @@
 				<%= f.label :completed %>
 			</div>
 		<% end %>
-		
+
 		<br>
 
 		<%= f.submit class: 'btn btn-primary' %>
