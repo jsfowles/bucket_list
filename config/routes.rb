@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#dashboard'
   devise_for :users
-
+  mount Commontator::Engine => '/commontator'
   #RESOURCES
 
   resources :users
