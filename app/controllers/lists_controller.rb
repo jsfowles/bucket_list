@@ -6,6 +6,7 @@ class ListsController < ApplicationController
 
   def show
 		commontator_thread_show(@list)
+    @items = @list.items.paginate(page: params[:page], per_page: 5)
   end
 
   def new

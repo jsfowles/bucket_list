@@ -6,7 +6,7 @@
 
 	<br>
 
-	<% @list.items.each do |item| %>
+	<% @items.each do |item| %>
 		<div class='item'>
 			<p class='list-p'><%= link_to item.title, list_item_path(@list, item) %></p>
 			<p class='complete_by'> Complete by goal: <%= display_date(item) %></p>
@@ -34,4 +34,6 @@
 			<%= link_to 'Add an item for this list', new_list_item_path(@list) %>
 		</button>
 	</div>
+	<br>
+	<%= will_paginate @items %>
 </div>
